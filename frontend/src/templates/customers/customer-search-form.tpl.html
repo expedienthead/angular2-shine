@@ -1,0 +1,36 @@
+<section class="search-form">
+  <form #f="ngForm">
+    <div class="input-group input-group-lg">
+      <label for="keywords" class="sr-only">Keywords</label>
+      <input type="text"
+             id="keywords"
+             class="form-control input-lg"
+             placeholder="First Name, Last Name, or Email Address"
+             ngControl="keywords" #keywords="ngForm">
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" (click)="search(f)">
+          Find customers
+        </button>
+      </span>
+    </div>
+  </form>
+</section>
+<h1 class="searchedFor" *ngIf="searchedFor">
+  <small>Search for:</small> {{searchedFor}}
+</h1>
+<section class="search-results">
+  <header>
+    <h3 class="h3">Results</h3>
+  </header>
+  <nav>
+    <ul class="pager">
+      <li class="previous">
+        <a href="" (click)="previousPage($event)">&larr; Previous</a>
+      </li>
+      <li class="next">
+        <a href="" (click)="nextPage($event)">Next &rarr;</a>
+      </li>
+    </ul>
+  </nav>
+  <shine-customer-list [customers]="customers"></shine-customer-list>
+</section>

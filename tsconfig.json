@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": false,
+    "sourceMap": true,
+    "noImplicitAny": true
+  },
+  "files": [
+    "./frontend/src/vendor.ts",
+    "./frontend/src/customer/customer-details-form.bootstrap.ts",
+    "./frontend/src/customer/customer-details-form.component.ts",
+    "./frontend/src/customer/customer-details.service.ts",
+    "./frontend/src/customer/customer-list.component.ts",
+    "./frontend/src/customer/customer-search-form.component.ts",
+    "./frontend/src/customer/customer-search.bootstrap.ts",
+    "./frontend/src/customer/customer-search.component.ts",
+    "./frontend/src/customer/customer-update-form.component.ts",
+    "./frontend/src/customer/customer.service.ts",
+    "./frontend/src/dashboard/dashboard.bootstrap.ts",
+    "./frontend/src/dashboard/dashboard.component.ts",
+    "./frontend/src/shared/customer-details.ts",
+    "./frontend/src/shared/customer.ts",
+    "./frontend/src/shared/state.ts"
+  ],
+  "filesGlob": [
+    "./frontend/src/*.ts",
+    "./frontend/src/**/*.ts",
+    "./frontend/test/**/*.ts",
+    "!./node_modules/**/*.ts",
+    "!./typings/*.ts",
+    "!./typings/**/*.ts"
+  ],
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "convertTabsToSpaces": true,
+    "insertSpaceAfterCommaDelimiter": true,
+    "insertSpaceAfterSemicolonInForStatements": true,
+    "insertSpaceBeforeAndAfterBinaryOperators": true,
+    "insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "placeOpenBraceOnNewLineForFunctions": false,
+    "placeOpenBraceOnNewLineForControlBlocks": false
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "exclude": []
+}

@@ -1,0 +1,7 @@
+<div class="center jumbotron">
+  <shine-dashboard></shine-dashboard>
+  <h2>Welcome to Shine, <%= current_user.email %><h2>
+</div>
+
+<%= webpack_script_for("vendor") %>
+<%= webpack_script_for("dashboard") %>

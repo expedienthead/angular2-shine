@@ -1,0 +1,96 @@
+<form>
+  <div class="row" *ngIf="customer">
+    <div class="col-md-6">
+      <article class="panel panel-primary">
+        <header class="panel-heading">
+          <h1 class="h3">Customer</h1>
+        </header>
+        <section class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="sr-only" for="first_name">
+                  First Name
+                </label>
+                <input type="text" class="form-control"
+                       name="first-name" [(ngModel)]="customer.first_name">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="sr-only" for="last-name">Last Name</label>
+                <input type="text" class="form-control"
+                       name="last-name" [(ngModel)]="customer.last_name">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="sr-only" for="username">Username</label>
+                <div class="input-group">
+                  <div class="input-group-addon">@</div>
+                  <input type="text" class="form-control"
+                         name="username" [(ngModel)]="customer.username">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Email</label>
+            <input type="text" class="form-control"
+                   name="email" [(ngModel)]="customer.email">
+          </div>
+        </section>
+        <footer class="panel-footer">
+          <label for="joined">Joined</label> {{customer.created_at | date}}
+        </footer>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="panel panel-default">
+        <header class="panel-heading">
+          <h1 class="h4">Shipping Address</h1>
+        </header>
+        <section class="panel-body">
+          <div class="form-group">
+            <label class="sr-only" for="street-address">
+              Street Address
+            </label>
+            <input type="text" class="form-control"
+                   name="street-address" value="123 Any St">
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group">
+                <label class="sr-only" for="city">City</label>
+                <input type="text" class="form-control"
+                       name="city" value="Chicago">
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <label class="sr-only" for="state">State</label>
+                <input type="text" class="form-control"
+                       name="state" value="IL">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label class="sr-only" for="zip">Zip</label>
+                <input type="text" class="form-control"
+                       name="zip" value="20001">
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <div class="text-right">
+        <button (click)="save()"
+                class="btn btn-lg btn-primary"
+                [disabled]="">
+          <i class="glyphicon glyphicon-save"></i>
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
