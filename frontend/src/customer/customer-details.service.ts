@@ -11,15 +11,27 @@ export class CustomerDetailsService {
   constructor(private _http: Http) {}
 
   getCustomerDetailsById(id: string) {
-      return this._http.get('/state.json')
-                 .map(res => res.json())
-                 .map(r => {
-                   let states: Array<State> = [];
-                   let customerDetails: CustomerDetails = null;
-                   if (r) {
-                     states = r.map((v: any) => new State(v));
-                   }
-                   return states;
-                 });
+      return Observable.forkJoin(
+        this._http.get('/state.json')
+            .map(res => res.json())
+            .map(r => {
+              let states: Array<State> = [];
+              if (r) {
+                states = r.map((v: any) => new State(v));
+              }
+              return states;
+            }),
+        this._http.get(`/customer/${id}.json`)
+                  .map(res => res.json())
+                  .map(r => {
+                    return new CustomerDetails(r);
+                  })
+      );
+  }
+
+  update(id: string, customerDetails: CustomerDetails) {
+    let param: { [s: string]: CustomerDetails } = { 'customer': customerDetails };
+    return this._http
+               .put('/customer/' + id, JSON.stringify(param));
   }
 }

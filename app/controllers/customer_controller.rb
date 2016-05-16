@@ -29,4 +29,19 @@ class CustomerController < ApplicationController
       format.json { render json: customer }
     end
   end
+
+  def update
+    customer_details = CustomerDetail.find(params[:id])
+    customer_details.update(customer_params)
+    render :show
+  end
+
+  private
+
+  def customer_params
+    request.body.rewind
+    ActionController::Parameters
+      .new(JSON.parse(request.body.read || '{"customer: "Not given"}'))
+      .require(:customer)
+  end
 end

@@ -24,6 +24,7 @@
     "./frontend/src/dashboard/dashboard.component.ts",
     "./frontend/src/shared/customer-details.ts",
     "./frontend/src/shared/customer.ts",
+    "./frontend/src/shared/global-validator.ts",
     "./frontend/src/shared/state.ts"
   ],
   "filesGlob": [
